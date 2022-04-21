@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_decimal.c                                    :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mandress <mandress@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 03:39:33 by mandress          #+#    #+#             */
-/*   Updated: 2022/04/21 22:19:49 by coder            ###   ########.fr       */
+/*   Created: 2021/08/28 21:49:54 by mandress          #+#    #+#             */
+/*   Updated: 2021/11/23 19:07:04 by mandress         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	print_decimal(va_list list, int n)
-{
-	int	d;
+#include "libft.h"
 
-	d = va_arg(list, int);
-	ft_atoi
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+{
+	size_t	i;
+
+	i = 0;
+	if (size > 0)
+	{
+		while (src[i] != '\0' && i < (size - 1))
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
+	}
+	return (ft_strlen(src));
 }

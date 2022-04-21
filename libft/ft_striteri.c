@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_decimal.c                                    :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mandress <mandress@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 03:39:33 by mandress          #+#    #+#             */
-/*   Updated: 2022/04/21 22:19:49 by coder            ###   ########.fr       */
+/*   Created: 2021/11/23 15:31:16 by mandress          #+#    #+#             */
+/*   Updated: 2021/11/23 16:00:32 by mandress         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	print_decimal(va_list list, int n)
-{
-	int	d;
+#include "libft.h"
 
-	d = va_arg(list, int);
-	ft_atoi
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	size_t	i;
+
+	i = 0;
+	if (!s || !f)
+		return ;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

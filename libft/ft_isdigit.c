@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_decimal.c                                    :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mandress <mandress@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 03:39:33 by mandress          #+#    #+#             */
-/*   Updated: 2022/04/21 22:19:49 by coder            ###   ########.fr       */
+/*   Created: 2021/08/17 12:27:25 by mandress          #+#    #+#             */
+/*   Updated: 2021/09/16 23:02:24 by mandress         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	print_decimal(va_list list, int n)
-{
-	int	d;
+#include<stdio.h>
+#include "libft.h"
 
-	d = va_arg(list, int);
-	ft_atoi
+int	ft_isdigit(int a)
+{
+	if (a >= '0' && a <= '9')
+		return (1);
+	else
+		return (0);
 }

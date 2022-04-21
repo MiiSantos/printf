@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_decimal.c                                    :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mandress <mandress@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 03:39:33 by mandress          #+#    #+#             */
-/*   Updated: 2022/04/21 22:19:49 by coder            ###   ########.fr       */
+/*   Created: 2021/11/17 12:06:31 by mandress          #+#    #+#             */
+/*   Updated: 2021/11/19 18:27:48 by mandress         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	print_decimal(va_list list, int n)
-{
-	int	d;
+#include "libft.h"
 
-	d = va_arg(list, int);
-	ft_atoi
+void	ft_lstclear(t_list **lst, void (*del)(void*))
+{
+	t_list	*aux;
+
+	aux = NULL;
+	if (!*lst)
+		return ;
+	while (*lst)
+	{
+		aux = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = aux;
+	}
+	*lst = NULL;
 }

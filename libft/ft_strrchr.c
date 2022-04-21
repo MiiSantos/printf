@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_decimal.c                                    :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mandress <mandress@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 03:39:33 by mandress          #+#    #+#             */
-/*   Updated: 2022/04/21 22:19:49 by coder            ###   ########.fr       */
+/*   Created: 2021/08/30 21:25:10 by mandress          #+#    #+#             */
+/*   Updated: 2021/11/24 12:06:44 by mandress         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	print_decimal(va_list list, int n)
-{
-	int	d;
+#include "libft.h"
 
-	d = va_arg(list, int);
-	ft_atoi
+char	*ft_strrchr(const char *str, int c)
+{
+	size_t		a;
+
+	a = ft_strlen(str);
+	if (c == 0)
+		return (ft_strchr(str, '\0'));
+	while (a)
+	{
+		a--;
+		if (str[a] == (unsigned char)c)
+			return ((char *)str + a);
+	}
+	return (0);
 }
