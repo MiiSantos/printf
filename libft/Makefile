@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mandress <mandress@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: coder <coder@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/19 15:21:03 by mandress          #+#    #+#              #
-#    Updated: 2021/11/23 19:32:17 by mandress         ###   ########.fr        #
+#    Updated: 2022/04/21 23:36:25 by coder            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,8 @@ SRCS	= ft_atoi.c \
 	ft_substr.c \
 	ft_strncmp.c \
 	ft_toupper.c \
-	ft_tolower.c
+	ft_tolower.c \
+	ft_putnbr_base.c
 
 BONUS	= ft_lstnew.c \
 	ft_lstadd_front.c \

@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 04:17:41 by mandress          #+#    #+#             */
-/*   Updated: 2022/04/21 22:17:48 by coder            ###   ########.fr       */
+/*   Updated: 2022/04/22 00:30:55 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ int	type(const char *str, va_list list)
 	else if (*str == 's')
 		len = print_string(list);
 	else if (*str == 'p')
-		len = print_hexa(list);
+		len = print_p(list);
 	else if (*str == 'd')
-		len = print_decimal(list);
+		len = print_d(list);
 	else if (*str == 'i')
-		len = print_int(list);
+		len = print_i(list);
 	else if (*str == 'u')
-		len = print_unsigned(list);
-	else if (*str == 'x' || *str == 'X')
-		len = print_hex(list, *str);
+		len = print_u(list);
+	// else if (*str == 'x' || *str == 'X')
+	// 	len = print_hex(list, *str);
 
 	return (len);
 }
@@ -53,7 +53,7 @@ int	ft_printf(const char *str, ...)
 		}
 		else
 		{
-			write (STDOUT_FILENO, &str[i], 1);
+			write(STDOUT_FILENO, &str[i], 1);
 			len++;
 		}
 		i++;

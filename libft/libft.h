@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mandress <mandress@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 10:42:58 by mandress          #+#    #+#             */
-/*   Updated: 2021/11/23 18:22:19 by mandress         ###   ########.fr       */
+/*   Updated: 2022/04/22 00:10:25 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }			t_list;
+
+int    ft_putnbr_base(unsigned long long n, char *base, int len);
 
 /**
  * @brief The C library function int atoi(const char *str) converts the string
