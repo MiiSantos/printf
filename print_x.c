@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   print_x.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandress <mandress@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/28 21:49:54 by mandress          #+#    #+#             */
-/*   Updated: 2021/11/23 19:07:04 by mandress         ###   ########.fr       */
+/*   Created: 2022/05/04 04:23:45 by coder             #+#    #+#             */
+/*   Updated: 2022/05/11 03:27:01 by mandress         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+int	print_x(va_list list)
 {
-	size_t	i;
+	unsigned int	x;
+	int				len;
 
-	i = 0;
-	if (size > 0)
-	{
-		while (src[i] != '\0' && i < (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
-	}
-	return (ft_strlen(src));
+	len = 0;
+	x = va_arg(list, unsigned int);
+	len = ft_putnbr_base(x, HEX_L, 0);
+	return (len);
+}
+
+int	print_x_upper(va_list list)
+{
+	unsigned int	x;
+	int				len;
+
+	len = 0;
+	x = va_arg(list, unsigned int);
+	len = ft_putnbr_base(x, HEX_U, 0);
+	return (len);
 }

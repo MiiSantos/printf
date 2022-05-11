@@ -5,47 +5,37 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mandress <mandress@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/04/12 03:41:48 by mandress          #+#    #+#              #
-#    Updated: 2022/05/11 02:44:10 by mandress         ###   ########.fr        #
+#    Created: 2022/05/05 14:26:47 by mandress          #+#    #+#              #
+#    Updated: 2022/05/05 14:36:54 by mandress         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=	libftprintf.a
-CFLAGS=	gcc -Wall -Wextra -Werror
-UTILS= ./utils/utils.a
-SRCS=	ft_printf.c \
-		print_char.c \
-		print_string.c \
-		print_p.c \
-		print_d.c \
-		print_i.c \
-		print_u.c \
-		print_x.c
-OBJS = $(SRCS:.c=.o)
+SRCS	= ft_strlen.c \
+	ft_itoa.c \
+	ft_putstr_fd.c \
+	ft_putnbr_base.c \
+	ft_putchar_fd_count.c
 
-all: $(NAME)
+NAME	= utils.a
 
-$(NAME): $(OBJS) $(UTILS)
-	cp utils/utils.a $(NAME)
+OBJS	= $(SRCS:.c=.o)
+
+FLAGS	= -Wall -Werror -Wextra
+
+all:	$(NAME)
+
+$(NAME):	$(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
-$(UTILS):
-	make -C ./utils
-
-$(OBJS):
-	$(CFLAGS) -I . -c $(SRCS)
+$(OBJS):	$(SRCS)
+	clang $(FLAGS) -c $(SRCS)
 
 clean:
 	rm -f $(OBJS)
-	make clean -C ./utils
 
-fclean: clean
-	make fclean -C ./utils
+fclean:	clean
 	rm -f $(NAME)
 
-re: fclean all
+re:	fclean all
 
 .PHONY: all clean fclean re
-
-test:
-	gcc -g3 main.c libftprintf.a

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   print_u.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mandress <mandress@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 00:31:36 by coder             #+#    #+#             */
-/*   Updated: 2022/04/22 00:47:39 by coder            ###   ########.fr       */
+/*   Updated: 2022/05/11 03:20:39 by mandress         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	print_u(va_list list)
 {
@@ -19,6 +19,6 @@ int	print_u(va_list list)
 
 	len = 0;
 	u = va_arg(list, unsigned int);
-	len = ft_putnbr_base(u, DEC, len);
-	return(len + 1);
+	len = ft_putnbr_base(u, DEC, 0);
+	return (len);
 }

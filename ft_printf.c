@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mandress <mandress@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 04:17:41 by mandress          #+#    #+#             */
-/*   Updated: 2022/04/22 00:30:55 by coder            ###   ########.fr       */
+/*   Updated: 2022/05/11 03:28:27 by mandress         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	type(const char *str, va_list list)
 {
@@ -29,9 +29,10 @@ int	type(const char *str, va_list list)
 		len = print_i(list);
 	else if (*str == 'u')
 		len = print_u(list);
-	// else if (*str == 'x' || *str == 'X')
-	// 	len = print_hex(list, *str);
-
+	else if (*str == 'x')
+		len = print_x(list);
+	else if (*str == 'X')
+		len = print_x_upper(list);
 	return (len);
 }
 
@@ -46,7 +47,7 @@ int	ft_printf(const char *str, ...)
 	va_start(list, str);
 	while (str[i] != '\0')
 	{
-		if(str[i] == '%')
+		if (str[i] == '%')
 		{
 			i++;
 			len += type(&str[i], list);
@@ -58,8 +59,6 @@ int	ft_printf(const char *str, ...)
 		}
 		i++;
 	}
-
 	va_end(list);
-
 	return (len);
 }

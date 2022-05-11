@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandress <mandress@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/17 13:27:04 by mandress          #+#    #+#             */
-/*   Updated: 2021/09/16 23:29:55 by mandress         ###   ########.fr       */
+/*   Created: 2022/05/05 14:22:30 by mandress          #+#    #+#             */
+/*   Updated: 2022/05/11 02:30:57 by mandress         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef UTILS_H
+# define UTILS_H
 
-int	ft_isalnum(int a)
-{
-	if (ft_isalpha(a) || ft_isdigit(a))
-		return (1);
-	else
-		return (0);
-}
+# include <unistd.h>
+# include <stdlib.h>
+
+char	*ft_itoa(int n);
+int		ft_strlen(const char *str);
+void	ft_putstr_fd(char *s, int fd);
+int		ft_putchar_fd_count(char c, int fd);
+int		ft_putnbr_base(size_t n, char *base, int len);
+
+#endif

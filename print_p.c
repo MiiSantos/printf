@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   print_p.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mandress <mandress@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 23:39:42 by coder             #+#    #+#             */
-/*   Updated: 2022/04/22 00:18:44 by coder            ###   ########.fr       */
+/*   Updated: 2022/05/11 03:24:10 by mandress         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	print_p(va_list list)
 {
 	void	*p;
 	int		len;
-	
+
 	len = 0;
 	p = va_arg(list, void *);
-	if(!p)
+	if (!p)
 	{
 		ft_putstr_fd("(nil)", 1);
 		len = 5;
@@ -27,8 +27,8 @@ int	print_p(va_list list)
 	else
 	{
 		ft_putstr_fd("0x", 1);
-		ft_putnbr_base((unsigned long)p, HEX_L, len);
-		len = 15;
+		len = ft_putnbr_base((unsigned long)p, HEX_L, 0);
+		len += 2;
 	}
-	return(len);
+	return (len);
 }

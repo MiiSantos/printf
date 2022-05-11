@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   print_d.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mandress <mandress@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 03:39:33 by mandress          #+#    #+#             */
-/*   Updated: 2022/04/22 00:24:44 by coder            ###   ########.fr       */
+/*   Updated: 2022/05/11 03:27:29 by mandress         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	print_d(va_list list)
 {
@@ -23,5 +23,5 @@ int	print_d(va_list list)
 	ft_putstr_fd(str, 1);
 	len = ft_strlen(str);
 	free(str);
-	return(len);
+	return (len);
 }
